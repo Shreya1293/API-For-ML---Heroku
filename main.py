@@ -33,11 +33,6 @@ class model_input(BaseModel):
 # Loading the saved model
 house_model = pickle.load(open('House_model.sav', 'rb'))
 
-@app.get('/')
-def root():
-    return {'message': 'Welcome to your FastAPI application!'}
-
-
 @app.post('/house_prediction')
 def house_predd(input_parameters: model_input):
     try:
